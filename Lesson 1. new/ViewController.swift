@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var hiLabel: UILabel!
-    @IBOutlet weak var calculateLabel: UILabel!
+    @IBOutlet private var calculateLabel: UILabel!
     @IBOutlet weak var randomLabel: UILabel!
     
     
