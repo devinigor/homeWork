@@ -39,8 +39,6 @@ final class ViewController: UIViewController {
         alertForViewDidLoad(title: "Enter your name", message: "", style: .alert)
     }
     
-    
-    
     //MARK: - IBAction
     
     @IBAction private func calculateButton(_ sender: UIButton) {
