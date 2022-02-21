@@ -51,12 +51,12 @@ class ThirdViewController: UIViewController, PHPickerViewControllerDelegate {
     let agePicker = UIPickerView()
     let sexPicker = UIPickerView()
     
+    let addButton = UIButton()
+    
     let sex = ["Мужской", "Женский"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        pressedDoneBtn()
-        createPicker()
         
         //Visual
         
@@ -105,23 +105,44 @@ class ThirdViewController: UIViewController, PHPickerViewControllerDelegate {
         textFieldInstagram.borderStyle = UITextField.BorderStyle.roundedRect
         self.view.addSubview(textFieldInstagram)
         
+        //Image Foto
+        imageFoto.frame = CGRect(x: 150, y: 120, width: 71, height: 71)
         imageFoto.image = UIImage(systemName: "person.circle")
         imageFoto.tintColor = .lightGray
         imageFoto.layer.cornerRadius = imageFoto.frame.size.width / 2
         self.view.addSubview(imageFoto)
         
+        //button Add
+        addButton.frame = CGRect(x: 300, y: 45, width: 100, height: 50)
+        addButton.setTitle("Добавить", for: .normal)
+        addButton.setTitleColor(UIColor.blue, for: .normal)
+        //addButton.layer.cornerRadius = 5
+        addButton.addTarget(self, action: #selector(buttonAdd), for: .touchUpInside)
+        self.view.addSubview(addButton)
+        
+        createDatePicker()
         datePicker.locale = .init(identifier: "Russian")
         datePicker.preferredDatePickerStyle = .wheels
-        self.view.addSubview(datePicker)
+       
+        
+        createPicker()
         
         agePicker.dataSource = self
         agePicker.delegate = self
         agePicker.tag = 1
-        textFieldAge.inputView = sexPicker
-        self.view.addSubview(agePicker)
+        textFieldAge.inputView = agePicker
+        
+        
+        sexPicker.dataSource = self
+        sexPicker.delegate = self
+        sexPicker.tag = 2
+        textFieldSex.inputView = sexPicker
+        
+        //toolButton
+        
+        
         
         textFieldInstagram.addTarget(self, action: #selector(alertInstagram), for: .allEditingEvents)
-        
         
     }
     
@@ -144,8 +165,8 @@ class ThirdViewController: UIViewController, PHPickerViewControllerDelegate {
         present(alertInstagram, animated: true, completion: nil)
     }
     
-    //func for BarButton
-    @objc private func addTapped() {
+    //func for AddButton
+    @objc private func buttonAdd() {
         delegate?.update(name: textFieldName.text!, age: textFieldAge.text!, instagram: textFieldInstagram.text!, image: imageFoto.image!, dayTo: datePicker.date)
         dismiss(animated: true, completion: nil)
     }
@@ -188,7 +209,6 @@ class ThirdViewController: UIViewController, PHPickerViewControllerDelegate {
 
         textFieldAge.inputAccessoryView = toolbarPicker
         textFieldSex.inputAccessoryView = toolbarPicker
-        
     }
     
     @objc func doneButtomAge() {

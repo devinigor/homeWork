@@ -55,7 +55,6 @@ class SecondViewController: UIViewController, SecondViewControllerDelegate {
         //BarButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addTapped))
         
-            
     }
     
     //func for BarButton
