@@ -11,75 +11,73 @@ protocol SecondViewControllerDelegate: AnyObject {
     func update(name: String, age: String, instagram: String, image: UIImage, dayTo: Date)
 }
 
-
 class SecondViewController: UIViewController, SecondViewControllerDelegate {
     
     //MARK: - Label's
     
-    let nameLabel = UILabel()
-    let ageLabel = UILabel()
-    let instagramLabel = UILabel()
-    let imageView = UIImageView()
-    let dayToBirthday = UILabel()
-    let navBarBirthday = UINavigationItem()
-    let buttonPlus = UIBarButtonItem()
+    private let nameLabel = UILabel()
+    private let ageLabel = UILabel()
+    private let instagramLabel = UILabel()
+    private let imageView = UIImageView()
+    private let dayToBirthday = UILabel()
+    private let navBarBirthday = UINavigationItem()
+    private let buttonPlus = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //nameLabel
-        nameLabel.frame = CGRect(x: 50, y: 300, width: 60, height: 30)
-        nameLabel.text = ""
+        nameLabel.frame = CGRect(x: 50, y: 300, width: 160, height: 30)
+        nameLabel.text = String()
         nameLabel.tintColor = .systemGray
-        self.view.addSubview(nameLabel)
+        view.addSubview(nameLabel)
         
         //ageLabel
-        ageLabel.frame = CGRect(x: 50, y: 400, width: 70, height: 30)
-        ageLabel.text = ""
+        ageLabel.frame = CGRect(x: 50, y: 350, width: 170, height: 30)
+        ageLabel.text = String()
         ageLabel.tintColor = .systemGray
-        self.view.addSubview(ageLabel)
+        view.addSubview(ageLabel)
         
         //dayToBirthday
-        dayToBirthday.text = ""
+        dayToBirthday.frame = CGRect(x: 50, y: 400, width: 170, height: 30)
+        dayToBirthday.text = String()
         dayToBirthday.tintColor = .systemGray
+        view.addSubview(dayToBirthday)
         
         //instagramLabel
-        instagramLabel.text = ""
+        instagramLabel.frame = CGRect(x: 50, y: 440, width: 170, height: 30)
+        instagramLabel.text = String()
+        instagramLabel.tintColor = .systemGray
+        view.addSubview(instagramLabel)
         
         //imageView
-        imageView.image = UIImage()
-        imageView.tintColor = .lightGray
+        imageView.frame = CGRect(x: 150, y: 120, width: 120, height: 120)
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.tintColor = .systemGray
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        self.view.addSubview(imageView)
+        imageView.isHidden = true
+        view.addSubview(imageView)
         
         //BarButton
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addTapped))
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
     }
     
     //func for BarButton
     @objc private func addTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         let viewController = storyboard.instantiateViewController(withIdentifier: "ThirdViewController")
-         navigationController?.pushViewController(viewController, animated: true)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController
+        viewController?.delegate = self
+         navigationController?.pushViewController(viewController!, animated: true)
+        imageView.isHidden = false
     }
     
-    //func for pass data
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? ThirdViewController else { return }
-        destination.delegate = self
-    }
-    
-    func update(name: String, age: String, instagram: String, image: UIImage,
-                dayTo: Date) {
-        nameLabel.text = name.capitalized
+    func update(name: String, age: String, instagram: String, image: UIImage, dayTo: Date) {
+        nameLabel.text? = name.capitalized
         ageLabel.text? = age + " " + "years"
-        instagramLabel.text = instagram
-        imageView.image = image
-        
+        instagramLabel.text? = instagram
+        imageView.image? = image
         let fromDay = dayTo
         let diffInDsays = Calendar.current.dateComponents([.day], from: .now, to: fromDay).day
         dayToBirthday.text! = diffInDsays!.description + " " + "дней"
     }
-    
 }
