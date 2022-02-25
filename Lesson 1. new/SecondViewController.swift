@@ -78,6 +78,8 @@ class SecondViewController: UIViewController, SecondViewControllerDelegate {
         imageView.image? = image
         let fromDay = dayTo
         let diffInDsays = Calendar.current.dateComponents([.day], from: .now, to: fromDay).day
-        dayToBirthday.text! = diffInDsays!.description + " " + "дней"
+        if (diffInDsays?.description) != nil {
+            dayToBirthday.text = diffInDsays!.description + " " + "дней"
+        }
     }
 }

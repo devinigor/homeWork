@@ -154,7 +154,7 @@ class ThirdViewController: UIViewController, PHPickerViewControllerDelegate {
     
     //func for AddButton
     @objc private func funcForAddButton() {
-        delegate?.update(name: textFieldName.text!, age: textFieldAge.text!, instagram: textFieldInstagram.text!, image: imageFoto.image!, dayTo: datePicker.date)
+        delegate?.update(name: textFieldName.text ?? "nil", age: textFieldAge.text ?? "nil", instagram: textFieldInstagram.text ?? "nil", image: imageFoto.image!, dayTo: datePicker.date)
         //dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
     }
