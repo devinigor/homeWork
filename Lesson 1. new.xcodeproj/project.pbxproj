@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272AC11427D029FE00AC1C2D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272AC11327D029FE00AC1C2D /* SecondViewController.swift */; };
+		278B1E0D27D8F65900AD52B3 /* Song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 278B1E0C27D8F65800AD52B3 /* Song1.mp3 */; };
+		278B1E0F27D8F65D00AD52B3 /* Song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 278B1E0E27D8F65D00AD52B3 /* Song2.mp3 */; };
 		27C38F2F27B14AE400C31AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C38F2E27B14AE400C31AF1 /* AppDelegate.swift */; };
 		27C38F3127B14AE400C31AF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C38F3027B14AE400C31AF1 /* SceneDelegate.swift */; };
 		27C38F3327B14AE400C31AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C38F3227B14AE400C31AF1 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272AC11327D029FE00AC1C2D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		278B1E0C27D8F65800AD52B3 /* Song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Song1.mp3; sourceTree = "<group>"; };
+		278B1E0E27D8F65D00AD52B3 /* Song2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Song2.mp3; sourceTree = "<group>"; };
 		27C38F2B27B14AE400C31AF1 /* Lesson 1. new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson 1. new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C38F2E27B14AE400C31AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27C38F3027B14AE400C31AF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +65,13 @@
 				27C38F2E27B14AE400C31AF1 /* AppDelegate.swift */,
 				27C38F3027B14AE400C31AF1 /* SceneDelegate.swift */,
 				27C38F3227B14AE400C31AF1 /* ViewController.swift */,
+				272AC11327D029FE00AC1C2D /* SecondViewController.swift */,
 				27C38F3427B14AE400C31AF1 /* Main.storyboard */,
 				27C38F3727B14AE600C31AF1 /* Assets.xcassets */,
 				27C38F3927B14AE600C31AF1 /* LaunchScreen.storyboard */,
 				27C38F3C27B14AE600C31AF1 /* Info.plist */,
+				278B1E0C27D8F65800AD52B3 /* Song1.mp3 */,
+				278B1E0E27D8F65D00AD52B3 /* Song2.mp3 */,
 			);
 			path = "Lesson 1. new";
 			sourceTree = "<group>";
@@ -126,8 +135,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27C38F3B27B14AE600C31AF1 /* LaunchScreen.storyboard in Resources */,
+				278B1E0F27D8F65D00AD52B3 /* Song2.mp3 in Resources */,
 				27C38F3827B14AE600C31AF1 /* Assets.xcassets in Resources */,
 				27C38F3627B14AE400C31AF1 /* Main.storyboard in Resources */,
+				278B1E0D27D8F65900AD52B3 /* Song1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272AC11427D029FE00AC1C2D /* SecondViewController.swift in Sources */,
 				27C38F3327B14AE400C31AF1 /* ViewController.swift in Sources */,
 				27C38F2F27B14AE400C31AF1 /* AppDelegate.swift in Sources */,
 				27C38F3127B14AE400C31AF1 /* SceneDelegate.swift in Sources */,
