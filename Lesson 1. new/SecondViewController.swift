@@ -85,13 +85,13 @@ final class SecondViewController: UIViewController {
             
             player.pause()
             sender.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-            sender.tintColor = .darkGray
+            sender.tintColor = .white
             
         } else {
             
             player.play()
             sender.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
-            sender.tintColor = .darkGray
+            sender.tintColor = .white
         }
     }
     
